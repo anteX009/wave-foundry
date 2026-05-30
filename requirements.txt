@@ -1,0 +1,2 @@
+# Optional dependency for the Perlin Flux filter
+noise>=1.2.2
