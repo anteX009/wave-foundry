@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
 """
-Wave Foundry
+Terminal Formas Organicas - version estable con Ribs como filtro.
 
-A small procedural mesh generator for Blender and 3D printing.
-It creates cylinder and square-based organic forms, previews them in a Tkinter 3D viewport, and exports OBJ files.
+Ejecutar:
+    python3 terminal_formas_organicas_ribs_stable.py
 
-Run:
-    python3 wave_foundry.py
+Opcional para Perlin Flux:
+    pip3 install noise
 """
 
 import tkinter as tk
@@ -768,6 +769,7 @@ class App:
         w = int(self.canvas.winfo_width() or 760)
         h = int(self.canvas.winfo_height() or 710)
         cx, cy = w / 2, h / 2
+        max_xy = max(params["ancho_base"], params["largo_base"]) + params["intensidad"] * 4
         max_dim = max(max_xy, params["altura"])
         scale = min(w, h) * 0.50 / max_dim
 
